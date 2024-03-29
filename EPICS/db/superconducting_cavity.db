@@ -1,0 +1,279 @@
+# File: superconducting_cavity.db
+# Description: EPICS database file for superconducting cavity parameters
+
+record(ai, "FCAV") {
+    field(DESC, "Resonant frequency of the cavity")
+    field(EGU, "Hz")
+    field(PINI, "YES")
+    field(VAL, "1300000000")
+}
+
+record(ai, "RQ") {
+    field(DESC, "Characteristic impedance of the cavity")
+    field(EGU, "Ohm")
+    field(PINI, "YES")
+    field(VAL, "520")
+}
+
+record(ai, "QL") {
+    field(DESC, "Loaded quality factor of the cavity")
+    field(PINI, "YES")
+    field(VAL, "3000000")
+}
+
+record(ai, "FRF") {
+    field(DESC, "RF frequency of the cavity")
+    field(EGU, "Hz")
+    field(PINI, "YES")
+    field(VAL, "1300000000")
+}
+
+record(calc, "FHBW") {
+    field(DESC, "Half bandwidth of the cavity")
+    field(EGU, "Hz")
+    field(CALC, "A/2/B")
+    field(INPA, "FCAV")
+    field(INPB, "QL")
+    info(IOC, "FHBW: $(RVAL)")
+    field(SCAN,".1 second")
+}
+
+record(calc, "TAU") {
+    field(DESC, "Decay time constant of the cavity")
+    field(EGU, "s")
+    field(CALC, "2*B/A")
+    field(INPA, "FCAV")
+    field(INPB, "QL")
+    info(IOC, "TAU: $(RVAL)")
+    field(SCAN,".1 second")
+}
+
+record(calc, "R") {
+    field(DESC, "Equivalent resistance of the cavity")
+    field(EGU, "Ohm")
+    field(CALC, "A*B")
+    info(IOC, "R: $(RVAL)")
+    field(INPA, "QL")
+    field(INPB, "RQ")
+    field(SCAN,".1 second")
+}
+
+record(calc, "C") {
+    field(DESC, "Equivalent capacitance of the cavity")
+    field(EGU, "F")
+    field(CALC, "1/(2*3.14159*A*B)")
+    info(IOC, "C: $(RVAL)")
+    field(INPA, "FCAV")
+    field(INPB, "RQ")
+    field(SCAN,".1 second")
+}
+
+record(calc, "L") {
+    field(DESC, "Equivalent inductance of the cavity")
+    field(EGU, "H")
+    field(CALC, "A/(2*3.14159*B)")
+    info(IOC, "L: $(RVAL)")
+    field(INPA, "RQ")
+    field(INPB, "FCAV")
+    field(SCAN,".1 second")
+}
+
+record(calc, "DEL_F_INITIAL") {
+    field(DESC, "Initial detuning of the cavity")
+    field(EGU, "Hz")
+    field(CALC, "A-B")
+    info(IOC, "DEL_F_INITIAL: $(RVAL)")
+    field(INPA, "FRF")
+    field(INPB, "FCAV")
+    field(SCAN,".1 second")
+}
+
+record(ai, "DEL_F_Microphonics") {
+    field(DESC, "Microphonics detuning of the cavity")
+    field(EGU, "Hz")
+    info(IOC, "DEL_F_Microphonics: $(RVAL)")
+    field(VAL, "10")
+}
+
+record(ai, "DEL_F_LFD_1") {
+    field(DESC, "The first mode of LFD detuning of the cavity")
+    field(EGU, "Hz")
+    info(IOC, "DEL_F_LFD_1: $(RVAL)")
+    field(VAL, "0")
+}
+
+record(ai, "DEL_F_LFD_2") {
+    field(DESC, "The second mode of LFD detuning of the cavity")
+    field(EGU, "Hz")
+    info(IOC, "DEL_F_LFD_2: $(RVAL)")
+    field(VAL, "0")
+}
+
+record(ai, "DEL_F_LFD_3") {
+    field(DESC, "The third mode of LFD detuning of the cavity")
+    field(EGU, "Hz")
+    info(IOC, "DEL_F_LFD_3: $(RVAL)")
+    field(VAL, "0")
+}
+
+record(calc, "DEL_F_LFD_TOTAL"){
+	field(DESC, "Total LFD detuning of the cavity")
+	field(EDU, "Hz")
+	field(CALC, "A+B+C")
+	field(INPA, "DEL_F_LFD_1")
+	field(INPB, "DEL_F_LFD_2")
+	field(INPC, "DEL_F_LFD_3")
+	info(IOC, "DEL_F_LFD_TOTAL: $(RVAL)")
+    field(SCAN,".1 second")
+}
+
+record(calc, "DEL_F_TOTAL") {
+    field(DESC, "Total detuning of the cavity")
+    field(EGU, "Hz")
+    field(CALC, "A+B+C")
+    info(IOC, "DEL_W_TOTAL: $(RVAL)")
+    field(INPA, "DEL_F_INITIAL")
+    field(INPB, "DEL_F_Microphonics")
+    field(INPC, "DEL_F_LFD_TOTAL")
+    field(SCAN,".1 second")
+}
+
+
+record(ai, "F_K1") {
+    field(DESC, "The first mode of cavity mechanical eigenfrequency")
+    field(EGU, "Hz")
+    field(PINI, "YES")
+    field(VAL, "235")
+}
+
+record(ai, "F_K2") {
+    field(DESC, "The second mode of cavity mechanical eigenfrequency")
+    field(EGU, "Hz")
+    field(PINI, "YES")
+    field(VAL, "290")
+}
+
+record(ai, "F_K3") {
+    field(DESC, "The third mode of cavity mechanical eigenfrequency")
+    field(EGU, "Hz")
+    field(PINI, "YES")
+    field(VAL, "450")
+}
+
+record(ai, "Q_K1") {
+    field(DESC, "The first mode of cavity mechanical quality factor")
+    field(PINI, "YES")
+    field(VAL, "100")
+}
+
+record(ai, "Q_K2") {
+    field(DESC, "The second mode of cavity mechanical quality factor")
+    field(PINI, "YES")
+    field(VAL, "100")
+}
+
+record(ai, "Q_K3") {
+    field(DESC, "The third mode of cavity mechanical quality factor")
+    field(PINI, "YES")
+    field(VAL, "100")
+}
+
+record(ai, "K_LFD1") {
+    field(DESC, "The first mode of Lorentz Force Detuning Constants")
+    field(EGU, "Hz/(MV/m)^2")
+    field(PINI, "YES")
+    field(VAL, "0.4e-12")
+}
+
+record(ai, "K_LFD2") {
+    field(DESC, "The second mode of Lorentz Force Detuning Constants")
+    field(EGU, "Hz/(MV/m)^2")
+    field(PINI, "YES")
+    field(VAL, "0.3e-12")
+}
+
+record(ai, "K_LFD3") {
+    field(DESC, "The third mode of Lorentz Force Detuning Constants")
+    field(EGU, "Hz/(MV/m)^2")
+    field(PINI, "YES")
+    field(VAL, "0.2e-12")
+}
+
+record(ai, "Ts") {
+    field(DESC, "Sampling Time")
+    field(EGU, "s")
+    field(PINI, "YES")
+    field(VAL, "1e-7")
+}
+
+record(ai, "Ig_I") {
+    field(DESC, "I component of the current of the generator")
+    field(EGU, "A")
+    field(PINI, "YES")
+    field(VAL, "32e-3")
+}
+
+record(ai, "Ig_Q") {
+    field(DESC, "Q component of the current of the generator")
+    field(EGU, "A")
+    field(PINI, "YES")
+    field(VAL, "0")
+}
+
+record(ai, "Ib_I") {
+    field(DESC, "I component of the current of the beam loading")
+    field(EGU, "A")
+    field(PINI, "YES")
+    field(VAL, "0")
+}
+
+record(ai, "Ib_Q") {
+    field(DESC, "Q component of the current of the beam loading")
+    field(EGU, "A")
+    field(PINI, "YES")
+    field(VAL, "0")
+}
+
+record(calc, "CurrentTime") {
+	field(DESC, "simulate current time")
+	field(EGU, "us")
+    field(CALC, "A+1")
+    field(INPA, "CurrentTime PP")
+    field(SCAN,".1 second")
+}
+
+
+record(ai, "V_I") {
+    field(DESC, "I component of the cavity voltage")
+    field(EGU, "V")
+    field(PINI, "YES")
+    field(VAL, "0")
+}
+
+record(ai, "V_Q") {
+    field(DESC, "Q component of the cavity voltage")
+    field(EGU, "V")
+    field(PINI, "YES")
+    field(VAL, "0")
+}
+
+record(ai, "dOmega1_dt") {
+    field(DESC, "The first mode of mechanicial detuning partical")
+    field(EGU, "rad/s")
+    field(PINI, "YES")
+    field(VAL, "0")
+}
+
+record(ai, "dOmega2_dt") {
+    field(DESC, "The second mode of mechanicial detuning partical")
+    field(EGU, "rad/s")
+    field(PINI, "YES")
+    field(VAL, "0")
+}
+
+record(ai, "dOmega3_dt") {
+    field(DESC, "The third mode of mechanicial detuning partical")
+    field(EGU, "rad/s")
+    field(PINI, "YES")
+    field(VAL, "0")
+}
