@@ -277,3 +277,42 @@ record(ai, "dOmega3_dt") {
     field(PINI, "YES")
     field(VAL, "0")
 }
+
+record(ai, "V_piezoin") {
+	field(DESC, "the output of LLRF about piezo driver signal")
+	field(EGU, "V")
+	field(PINI, "YES")
+	field(VAL, "0")
+}
+
+record(ai, "C_piezo") {
+	field(DESC, "Fast tuning (piezo) tuning sensitivity")
+	field(EGU, "Hz/V")
+	field(PINI, "YES")
+	field(VAL, "10")
+}
+
+record(ai, "C_piezoout") {
+	field(DESC, "Output signal and piezoelectric voltage coefficient")
+	field(EGU, "V")
+	field(PINI, "YES")
+	field(VAL, "1")
+}
+
+record(calc, "V_piezo") {
+	field(DESC, "the voltae of piezo driver")
+	field(EGU, "V")
+	field(CALC, "A*B")
+    field(INPA, "V_piezoin")
+    field(INPB, "C_piezoout")
+    field(SCAN,".1 second")
+}
+
+record(calc, "Piezo_compensation") {
+	field(DESC, "the amount of piezo compensation")
+	field(EGU, "Hz")
+	field(CALC, "A*B")
+	field(INPA, "V_piezo")
+	field(INPB, "C_piezo")
+	field(SCAN, ".1 second")
+}
