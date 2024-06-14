@@ -1,0 +1,24 @@
+record(ai, "Virtual_SRF:f_RF") {
+    field(PREC, "3")
+    field(EGU, "Hz")
+}
+record(ai, "Virtual_SRF:P_RF") {
+    field(PREC, "3")
+    field(EGU, "W")
+}
+record(ai, "Virtual_SRF:phi_RF") {
+    field(PREC, "3")
+    field(EGU, "rad")
+}
+record(ai, "Virtual_SRF:V_RF") {
+    field(PREC, "3")
+    field(EGU, "V")
+}
+record(ai, "Virtual_SRF:I_RF") {
+    field(PREC, "3")
+    field(EGU, "A")
+}
+record(ai, "Virtual_SRF:R_sh") {
+    field(PREC, "3")
+    field(EGU, "Ohm")
+}

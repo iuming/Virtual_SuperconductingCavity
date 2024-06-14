@@ -1,0 +1,108 @@
+record(ai, "Virtual_SRF:f_cavity") {
+    field(PREC, "3")
+    field(EGU, "Hz")
+}
+record(ai, "Virtual_SRF:tau_cavity") {
+    field(PREC, "3")
+    field(EGU, "s")
+}
+record(ai, "Virtual_SRF:QL") {
+    field(PREC, "3")
+    field(EGU, "")
+}
+record(ai, "Virtual_SRF:f_HBW") {
+    field(PREC, "3")
+    field(EGU, "Hz")
+}
+record(ai, "Virtual_SRF:R_L") {
+    field(PREC, "3")
+    field(EGU, "Ohm")
+}
+record(ai, "Virtual_SRF:C") {
+    field(PREC, "3")
+    field(EGU, "F")
+}
+record(ai, "Virtual_SRF:L") {
+    field(PREC, "3")
+    field(EGU, "H")
+}
+record(ai, "Virtual_SRF:beta") {
+    field(PREC, "3")
+    field(EGU, "")
+}
+record(ai, "Virtual_SRF:f_m1") {
+    field(PREC, "3")
+    field(EGU, "Hz")
+}
+record(ai, "Virtual_SRF:f_m2") {
+    field(PREC, "3")
+    field(EGU, "Hz")
+}
+record(ai, "Virtual_SRF:f_m3") {
+    field(PREC, "3")
+    field(EGU, "Hz")
+}
+record(ai, "Virtual_SRF:Q_m1") {
+    field(PREC, "3")
+    field(EGU, "")
+}
+record(ai, "Virtual_SRF:Q_m2") {
+    field(PREC, "3")
+    field(EGU, "")
+}
+record(ai, "Virtual_SRF:Q_m3") {
+    field(PREC, "3")
+    field(EGU, "")
+}
+record(ai, "Virtual_SRF:K_m1") {
+    field(PREC, "3")
+    field(EGU, "")
+}
+record(ai, "Virtual_SRF:K_m2") {
+    field(PREC, "3")
+    field(EGU, "")
+}
+record(ai, "Virtual_SRF:K_m3") {
+    field(PREC, "3")
+    field(EGU, "")
+}
+record(ai, "Virtual_SRF:dfdp") {
+    field(PREC, "3")
+    field(EGU, "Hz/Pa")
+}
+record(ai, "Virtual_SRF:K_LFD") {
+    field(PREC, "3")
+    field(EGU, "Hz/T")
+}
+record(ai, "Virtual_SRF:C_tuning") {
+    field(PREC, "3")
+    field(EGU, "Hz/V")
+}
+record(ai, "Virtual_SRF:Q0") {
+    field(PREC, "3")
+    field(EGU, "")
+}
+record(ai, "Virtual_SRF:V_cavity") {
+    field(PREC, "3")
+    field(EGU, "V")
+}
+record(ai, "Virtual_SRF:L_eff") {
+    field(PREC, "3")
+    field(EGU, "m")
+}
+record(ai, "Virtual_SRF:Ep_Eacc") {
+    field(PREC, "3")
+    field(EGU, "")
+}
+record(ai, "Virtual_SRF:Bp_Eacc") {
+    field(PREC, "3")
+    field(EGU, "")
+}
+record(ai, "Virtual_SRF:Ep") {
+    field(PREC, "3")
+    field(EGU, "MV/m")
+}
+record(ai, "Virtual_SRF:Bp") {
+    field(PREC, "3")
+    field(EGU, "T")
+}

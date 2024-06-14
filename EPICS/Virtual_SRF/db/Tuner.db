@@ -1,0 +1,24 @@
+record(ai, "Virtual_SRF:S_motor") {
+    field(PREC, "3")
+    field(EGU, "rpm")
+}
+record(ai, "Virtual_SRF:C_motor") {
+    field(PREC, "3")
+    field(EGU, "mm/rev")
+}
+record(ai, "Virtual_SRF:K_tuner") {
+    field(PREC, "3")
+    field(EGU, "Hz/um")
+}
+record(ai, "Virtual_SRF:Z_tuner") {
+    field(PREC, "3")
+    field(EGU, "Ohm")
+}
+record(ai, "Virtual_SRF:V_tuner") {
+    field(PREC, "3")
+    field(EGU, "V")
+}
+record(ai, "Virtual_SRF:I_tuner") {
+    field(PREC, "3")
+    field(EGU, "A")
+}

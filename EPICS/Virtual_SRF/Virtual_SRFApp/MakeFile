@@ -1,0 +1,5 @@
+TOP=..
+include $(TOP)/configure/CONFIG
+DIRS += $(TOP)/virtual_srfApp
+DIRS += $(TOP)/iocBoot/iocVirtual_SRF
+include $(TOP)/configure/RULES_DIRS

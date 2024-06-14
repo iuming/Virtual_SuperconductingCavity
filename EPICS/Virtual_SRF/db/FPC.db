@@ -1,0 +1,36 @@
+record(ai, "Virtual_SRF:beta") {
+    field(PREC, "3")
+    field(EGU, "")
+}
+record(ai, "Virtual_SRF:T1") {
+    field(PREC, "3")
+    field(EGU, "°C")
+}
+record(ai, "Virtual_SRF:T2") {
+    field(PREC, "3")
+    field(EGU, "°C")
+}
+record(ai, "Virtual_SRF:T3") {
+    field(PREC, "3")
+    field(EGU, "°C")
+}
+record(ai, "Virtual_SRF:T4") {
+    field(PREC, "3")
+    field(EGU, "°C")
+}
+record(ai, "Virtual_SRF:T5") {
+    field(PREC, "3")
+    field(EGU, "°C")
+}
+record(ai, "Virtual_SRF:T6") {
+    field(PREC, "3")
+    field(EGU, "°C")
+}
+record(ai, "Virtual_SRF:T7") {
+    field(PREC, "3")
+    field(EGU, "°C")
+}
+record(ai, "Virtual_SRF:T8") {
+    field(PREC, "3")
+    field(EGU, "°C")
+}

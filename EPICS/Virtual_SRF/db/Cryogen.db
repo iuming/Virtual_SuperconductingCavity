@@ -1,0 +1,24 @@
+record(ai, "Virtual_SRF:He_pressure") {
+    field(PREC, "3")
+    field(EGU, "Pa")
+}
+record(ai, "Virtual_SRF:T_coldhead") {
+    field(PREC, "3")
+    field(EGU, "K")
+}
+record(ai, "Virtual_SRF:T_shield") {
+    field(PREC, "3")
+    field(EGU, "K")
+}
+record(ai, "Virtual_SRF:T_bath") {
+    field(PREC, "3")
+    field(EGU, "K")
+}
+record(ai, "Virtual_SRF:T_He_in") {
+    field(PREC, "3")
+    field(EGU, "K")
+}
+record(ai, "Virtual_SRF:T_He_out") {
+    field(PREC, "3")
+    field(EGU, "K")
+}
