@@ -1,3 +1,4 @@
+LICENSE.md
 README.md
 setup.py
 QtCavity.egg-info/PKG-INFO
@@ -7,6 +8,7 @@ QtCavity.egg-info/entry_points.txt
 QtCavity.egg-info/not-zip-safe
 QtCavity.egg-info/top_level.txt
 qtcavity/__init__.py
+qtcavity/file_manager.py
 qtcavity/main.py
 qtcavity/simulate.py
 qtcavity/resources/qtcavity.ui
