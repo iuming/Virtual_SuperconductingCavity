@@ -1,0 +1,6 @@
+*.swp
+*.swo
+*.autosave
+__pycache__/
+build/
+dist/
